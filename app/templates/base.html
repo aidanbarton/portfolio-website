@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Aidan Barton</title>
-    <link type="text/css" rel="stylesheet" href="/static/main.css"/>
-    <link type="img/png" rel="icon" href="/static/pictures/favicon.png"/>
-  </head>
-  <body>
-
-  </body>
+    <head>
+        <title>Aidan Barton</title>
+        <link type="text/css" rel="stylesheet" href="/static/main.css"/>
+        <link type="img/png" rel="icon" href="/static/pictures/favicon.png"/>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <nav>
+                <ul>
+                    <li>aidan barton</li>
+                    <li>gallery</li>
+                </ul>
+            </nav>
+            {% block body %}
+            {% endblock %}
+            <div class="footer">
+                social media
+            </div>
+        </div>
+    </body>
 </html>

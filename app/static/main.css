@@ -1,0 +1,53 @@
+@font-face {
+    font-family: slab;
+    src: url(fonts/JosefinSlab-Light.ttf);
+}
+@font-face {
+    font-family: Ubuntu;
+    src: url(fonts/Ubuntu-Light.ttf);
+}
+
+body
+{
+  padding: 0px;
+  margin: 0px;
+  font-family: slab
+  color: #030303;
+  background: #ddd;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  display: inline-block;
+}
+
+.main-wrapper {
+  padding: 0px;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  margin: 0px;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 100;
+  font-size: 4vw;
+}
+
+.fadein {
+  animation: fadein;
+  animation-duration: 1.6s;
+  animation-timing-function: cubic-bezier(1,0,.25,1);
+}
+@keyframes fadein {
+  from{opacity: 0;}
+  to{opacity: 100;}
+}
+
+
+@media screen and (min-width: 720px) {
+}
