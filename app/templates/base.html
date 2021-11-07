@@ -6,15 +6,21 @@
         <link type="img/png" rel="icon" href="/static/pictures/favicon.png"/>
     </head>
     <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">aidan barton</a>
+                </li>
+                <li>
+                    <a href="/gallery">gallery</a>
+                </li>
+            </ul>
+        </nav>
         <div class="main-wrapper">
-            <nav>
-                <ul>
-                    <li>aidan barton</li>
-                    <li>gallery</li>
-                </ul>
-            </nav>
+            <div class='main'>
             {% block body %}
             {% endblock %}
+            </div>
             <div class="footer">
                 social media
             </div>
