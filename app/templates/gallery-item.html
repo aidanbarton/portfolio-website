@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+    <input class='gallery-view-toggle' type='checkbox' id='toggler'>
+    <div class='gallery-view-data'>
+        <h1> title </h1>
+        <p> some info </p>
+
+        click to zoom
+    </div>
+    <label for='toggler' class='gallery-view-zoom'>
+        <img class='gallery-view-item' src="{{ item['path'] }}">
+    </label>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+    <ul class='library'>
+        {% for item in library %}
+            <li style="background: url({{ item['path'] }}); background-size: cover; background-position: center;">
+                <a class='gallery' href="/gallery/{{ library_name }}/{{ item['name'] }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

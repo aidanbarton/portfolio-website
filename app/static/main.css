@@ -7,21 +7,27 @@ body
 {
   padding: 0px;
   margin: 0px;
-  font-family: slab;
-  color: #030303;
+  font-family: serif;
+  color: #80808f;
   background: #fff;
   position: relative;
   overflow-x: hidden;
   width: 100%;
   display: inline-block;
+  background: linear-gradient(to right, white, #fee, white);
+  background: #fff;
 }
 
-.main-wrapper {
+.content {
   padding: 0px;
-  padding-left: 10vw;
-  padding-right: 10vw;
   margin: 0px;
-  margin-top: 10vh;
+  margin-top: calc(10vh + 10px);
+  min-height: 80vh;
+  width: 100vw;
+  display: inline-flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
@@ -36,30 +42,116 @@ nav {
   z-index: 100;
   font-size: large;
   text-transform: uppercase;
+  display: inline-flex;
+  justify-content: center;
 }
 
 nav ul {
-  margin: inherit;
-  padding: inherit;
+  margin: inherit; padding: inherit; list-style-type: None;
   height: 100%;
-  list-style-type: None;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 nav ul li {
-  float: right;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  font-size: 1vw;
+  display: inline-flex;
+  height: 100%;
+  width: 10vw;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 nav ul li a {
-  color: #333;
-  text-decoration: None;
   background: #fff;
+  color: #80808f;
+  text-decoration: None;
 }
 nav ul li a:hover {
-  color: #000;
+  color: #fcc;
   font-weight: bold;
 }
 
-@media screen and (min-width: 720px) {
+ul.library {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style-type: none;
+  gap: 10px;
+  columns: 2;
+}
+ul.library li {
+  width: 400px;
+  height: 400px; 
+  display: inline-block;
+}
+ul.library li a {
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 6vw;
+  font-weight: bolder;
+  color: #fff;
+}
+.gallery:hover {
+  color: #fcc;
+  background-color: #333;
+  opacity: .6;
+}
+
+.gallery-view-item {
+  width: 100%;
+}
+.gallery-view-data {
+  text-align: center;
+}
+label.gallery-view-zoom {
+  cursor: zoom-in;
+  max-width: 40vw;
+}
+input.gallery-view-toggle {
+  display: none;
+}
+input.gallery-view-toggle:checked ~ .gallery-view-item {
+}
+input.gallery-view-toggle:checked ~ .gallery-view-data {
+  display: none;
+}
+input.gallery-view-toggle:checked ~ .gallery-view-zoom {
+  cursor: zoom-out;
+  max-width: 100vw;
+}
+
+
+.footer {
+  background: #80808f;
+  width: 100%;
+  height: 10vh;
+  padding: 0px;
+  margin: 0px;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.footer a {
+  text-decoration: none;
+  font-size: large;
+  text-transform: uppercase;
+  color: #fff;
+}
+.footer a:hover {
+  color: #fcc;
+  font-weight: bolder;
 }
