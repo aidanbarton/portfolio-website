@@ -17,25 +17,6 @@ galleries = (
 )
 library = Library(home_dir, library_path, galleries)
 
-
-def get_libraries():
-    libs = dict()
-    for n in galleries:
-        path = library_path + n + '/'
-        items = list()
-        for i in listdir(home_dir + path):
-            if '.jpg' in i:
-                item = dict()
-                item['path'] = path + i
-                item['name'] = i.split('.')[0]
-                items.append(item)
-            elif '.txt' in i:
-                pass
-
-        items.sort(reverse=True)
-        libs[n] = items
-    return libs
-
 @app.route('/')
 def index():
     return render_template('index.html')
