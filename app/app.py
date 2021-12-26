@@ -32,8 +32,7 @@ def gallery():
 
 @app.route('/gallery/<name>')
 def gallery_name(name):
-    lib = get_libraries()
-    if name not in lib:
+    if name not in galleries:
         return abort(404)
 
     return render_template('gallery-name.html',
@@ -42,7 +41,6 @@ def gallery_name(name):
 
 @app.route('/gallery/<name>/<item>')
 def gallery_name_item(name, item):
-    lib = get_libraries()
     if name not in library.libraries:
         return abort(404)
 

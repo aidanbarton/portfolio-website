@@ -1,0 +1,44 @@
+.landing-page {
+  width: 100%;
+  min-height: 80vh;
+  margin-bottom: 10px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+
+  color: #fff;
+  font-weight: bolder;
+  font-size: 5vw;
+}
+
+.landing-page p {
+  background: #d0d0df;
+  width: 100%;
+  height: 15vh;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p.lp-0 {
+  background: #d0d0df;
+}
+p.lp-1 {
+  background: #c0c0cf;
+}
+p.lp-2 {
+  background: #c0b0bf;
+}
+p.lp-3 {
+  background: #a0a0af;
+}
+
+@media only screen and (max-width: 768px) {
+    .landing-page {
+        font-size: 6vw;
+    }
+}
