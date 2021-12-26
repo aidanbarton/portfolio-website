@@ -1,30 +1,36 @@
 from flask import Flask, render_template, redirect, url_for, abort
-import os
 from os import listdir
+
+from library import Library
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
-gallery_names = (
+home_dir = '/root/portfolio-website/app'
+library_path = '/static/photos/gallery/'
+galleries = (
     'oil',
     'water',
     'charcoal',
     'draw',
     'sketch',
 )
-home_dir = '/root/portfolio-website/app'
-gallery_path = '/static/photos/gallery/'
+library = Library(home_dir, library_path, galleries)
+
 
 def get_libraries():
     libs = dict()
-    for n in gallery_names:
-        path = gallery_path + n + '/'
+    for n in galleries:
+        path = library_path + n + '/'
         items = list()
         for i in listdir(home_dir + path):
-            item = dict()
-            item['path'] = path + i
-            item['name'] = i.split('.')[0]
-            items.append(item)
+            if '.jpg' in i:
+                item = dict()
+                item['path'] = path + i
+                item['name'] = i.split('.')[0]
+                items.append(item)
+            elif '.txt' in i:
+                pass
 
         items.sort(reverse=True)
         libs[n] = items
@@ -41,7 +47,7 @@ def about():
 @app.route('/gallery')
 def gallery():
     return render_template('gallery.html',
-                            libraries=get_libraries())
+                            library=library.libraries)
 
 @app.route('/gallery/<name>')
 def gallery_name(name):
@@ -50,19 +56,20 @@ def gallery_name(name):
         return abort(404)
 
     return render_template('gallery-name.html',
-                            library_name=name,
-                            library=lib[name])
+                            gallery_name=name,
+                            gallery=library.libraries[name])
 
 @app.route('/gallery/<name>/<item>')
 def gallery_name_item(name, item):
     lib = get_libraries()
-    if name not in lib:
+    if name not in library.libraries:
         return abort(404)
 
-    for i in lib[name]:
-        if item in i['name']:
-            return render_template('gallery-item.html',
-                                item=i)
+    if item not in library.libraries[name]:
+        return abort(404)
+
+    return render_template('gallery-item.html',
+                        item=library.libraries[name][item])
 
     return abort(404)
 

@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block body %}
+    <span class='gallery-page-title'>{{ gallery_name }}</span>
     <ul class='library'>
-        {% for item in library %}
-            <li style="background: url({{ item['path'] }}); background-size: cover; background-position: center;">
-                <a class='gallery' href="/gallery/{{ library_name }}/{{ item['name'] }}">
+        {% for item in gallery.keys()|sort(reverse=True) %}
+            <li style="background: url({{ gallery[item]['path'] }}); background-size: cover; background-position: center;">
+                <a class='gallery' href="/gallery/{{ gallery_name }}/{{ item }}">
+                    <div class='gallery-item-hover'>
+                        {{ gallery[item]['title'] }}
+                    </div>
                 </a>
             </li>
         {% endfor %}

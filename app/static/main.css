@@ -1,8 +1,3 @@
-@font-face {
-    font-family: slab;
-    src: url(fonts/JosefinSlab-Light.ttf);
-}
-
 body
 {
   padding: 0px;
@@ -26,7 +21,6 @@ body
   width: 100vw;
   display: inline-flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -47,7 +41,9 @@ nav {
 }
 
 nav ul {
-  margin: inherit; padding: inherit; list-style-type: None;
+  margin: inherit;
+  padding: inherit;
+  list-style-type: None;
   height: 100%;
   display: inline-flex;
   flex-flow: row nowrap;
@@ -76,16 +72,16 @@ ul.library {
   padding: 0;
   margin: 0;
   margin-bottom: 10px;
+  margin-top: 10px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   list-style-type: none;
   gap: 10px;
-  columns: 2;
 }
 ul.library li {
-  width: 400px;
-  height: 400px; 
+  width: 35vw;
+  height: 35vw;
   display: inline-block;
 }
 ul.library li a {
@@ -95,6 +91,15 @@ ul.library li a {
   align-items: center;
 }
 
+.gallery-page-title {
+  width: 100%;
+  font-size: 6vw;
+  font-weight: bolder;
+  letter-spacing: 1vw;
+  text-align: center;
+  background: #80808f;
+  color: #fff;
+}
 .gallery {
   display: inline-block;
   width: 100%;
@@ -109,16 +114,30 @@ ul.library li a {
   background-color: #333;
   opacity: .6;
 }
+.gallery-item-hover {
+  display: none;
+  text-transform: capitalize;
+  font-size: 3vw;
+  width: 75%;
+  text-align: center;
+}
+.gallery:hover > .gallery-item-hover {
+  display: block;
+}
 
 .gallery-view-item {
   width: 100%;
 }
 .gallery-view-data {
   text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #80808f;
 }
 label.gallery-view-zoom {
   cursor: zoom-in;
-  max-width: 40vw;
+  max-width: 50vw;
 }
 input.gallery-view-toggle {
   display: none;
@@ -142,16 +161,55 @@ input.gallery-view-toggle:checked ~ .gallery-view-zoom {
   margin: 0px;
   display: inline-flex;
   flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #fff;
+}
+.footer ul {
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  list-style-type: None;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.footer ul li {
+  height: 100%;
+  width: 10vw;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
 .footer a {
   text-decoration: none;
-  font-size: large;
-  text-transform: uppercase;
+  font-size: 1vw;
   color: #fff;
+  padding: 10px;
 }
 .footer a:hover {
   color: #fcc;
   font-weight: bolder;
+}
+.footer div {
+  height: 100%;
+  width: 30vw;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    ul.library li {
+        width: 100vw;
+        height: 100vw;
+    }
+
+    .gallery {
+        font-size: 16vw;
+    }
+
+    label.gallery-view-zoom {
+      max-width: 100vw; }
 }
