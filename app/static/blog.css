@@ -1,0 +1,11 @@
+.words {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+ul.blog {
+  list-style: none;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+}

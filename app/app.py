@@ -11,7 +11,6 @@ library_path = '/static/photos/gallery/'
 galleries = (
     'oil',
     'water',
-    'charcoal',
     'draw',
     'sketch',
 )

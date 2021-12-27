@@ -36,7 +36,9 @@ class Library():
                 gal_items[name]['title'] = lines[0]
                 gal_items[name]['data'] = lines[1]
 
-
+            #thumbnail for gallery
+            thumb = sorted(gal_items.keys())[-1]
+            gal_items['thumb'] = gal_items[thumb]['path']
             lib[gal_name] = gal_items
 
         self._libraries = lib

@@ -3,6 +3,7 @@
     <span class='gallery-page-title'>{{ gallery_name }}</span>
     <ul class='library'>
         {% for item in gallery.keys()|sort(reverse=True) %}
+            {% if item != 'thumb' %}
             <li style="background: url({{ gallery[item]['path'] }}); background-size: cover; background-position: center;">
                 <a class='gallery' href="/gallery/{{ gallery_name }}/{{ item }}">
                     <div class='gallery-item-hover'>
@@ -10,6 +11,7 @@
                     </div>
                 </a>
             </li>
+            {% endif %}
         {% endfor %}
     </ul>
 {% endblock %}
