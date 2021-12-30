@@ -49,8 +49,6 @@ def gallery_name_item(name, item):
     return render_template('gallery-item.html',
                         item=library.libraries[name][item])
 
-    return abort(404)
-
 
 if __name__ == '__main__':
     app.run()
